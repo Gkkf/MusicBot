@@ -97,12 +97,14 @@ client.on('message', async message =>
 
     if (command == "pomoc") 
     {
-        message.channel.send('*Komendy do użycia:*');
-        message.channel.send('  **!play / !p** - bot gra wybraną przez Ciebie muzykę');
-        message.channel.send('  **!skip** - bot pomija utwór i puszcza następny');
-        message.channel.send('  **!loop** - bot zapętla utwór');
-        message.channel.send('  **!kolejka** - bot pokazuje kolejkę odtwarzania utworów');
-        message.channel.send('  **!wyjazd** - bot wychodzi z kanału');
+        message.channel.send(`
+        *Komendy do użycia:*
+            **!play / !p** - bot gra wybraną przez Ciebie muzykę
+            **!skip** - bot pomija utwór i puszcza następny
+            **!loop** - bot zapętla utwór
+            **!kolejka** - bot pokazuje kolejkę odtwarzania utworów
+            **!wyjazd** - bot wychodzi z kanału
+        `);
     }
 
 });
