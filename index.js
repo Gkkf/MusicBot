@@ -99,11 +99,11 @@ client.on('message', async message =>
     {
         message.channel.send(`
         *Komendy do użycia:*
-            **!play / !p** - bot gra wybraną przez Ciebie muzykę
-            **!skip** - bot pomija utwór i puszcza następny
-            **!loop** - bot zapętla utwór
-            **!kolejka** - bot pokazuje kolejkę odtwarzania utworów
-            **!wyjazd** - bot wychodzi z kanału
+            **!play / !p** - bot gra wybraną przez Ciebie muzykę.
+            **!skip** - bot pomija utwór i puszcza następny.
+            **!loop** - bot zapętla utwór.
+            **!kolejka** - bot pokazuje kolejkę odtwarzania utworów.
+            **!wyjazd** - bot wychodzi z kanału.
         `);
     }
 
