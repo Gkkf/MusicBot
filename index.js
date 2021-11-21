@@ -7,21 +7,7 @@ client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true
 
 client.distube
     .on("playSong", (message, queue, song) => message.channel.send(
-        new Discord.MessageEmbed()
-        .setTitle("Teraz gram:")
-        .setDescription(`${song.name}\n\`Wywołane przez:\` ${song.user}`)
-        .setColor("#ff0000")
-        .setThumbnail('https://img.icons8.com/clouds/2x/play.png')
-        .addField(
-            "\u200b",
-            new Date(seek * 1000).toISOString().substr(11, 8) +
-            "[ " +
-            createBar(song.formattedDuration == 0 ? seek : song.formattedDuration, seek, 10)[0] +
-            "] " +
-            (song.formattedDuration == 0 ? " ◉ LIVE" : new Date(song.formattedDuration * 1000).toISOString().substr(11, 8)),
-            false
-        )
-        //`Teraz gram: \`${song.name}\` - \`${song.formattedDuration}\`\nWywołane przez: ${song.user}`
+        `Teraz gram: \`${song.name}\` - \`${song.formattedDuration}\`\nWywołane przez: ${song.user}`
     ))
 
 	.on("addSong", (message, queue, song) => message.channel.send(
