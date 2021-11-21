@@ -6,10 +6,8 @@ DisTube = require('distube');
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
 
 client.distube
-    .on("playSong", (message, queue, song) => message.channel.send( 
-    function embed()
-    {
-        let n = new Discord.MessageEmbed()
+    .on("playSong", (message, queue, song) => message.channel.send(
+        new Discord.MessageEmbed()
         .setTitle("Teraz gram:")
         .setDescription(`${song.name}\n\`Wywołane przez:\` ${song.user}`)
         .setColor("#ff0000")
@@ -23,14 +21,6 @@ client.distube
             (song.formattedDuration == 0 ? " ◉ LIVE" : new Date(song.formattedDuration * 1000).toISOString().substr(11, 8)),
             false
         )
-
-        if(song.formattedDuration > 0)
-        {
-            n.setFooter("Pozostało: " + new Date(left * 1000).toISOString().substr(11, 8));
-
-            return message.channel.send(n);
-        }
-    }
         //`Teraz gram: \`${song.name}\` - \`${song.formattedDuration}\`\nWywołane przez: ${song.user}`
     ))
 
