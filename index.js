@@ -7,7 +7,7 @@ client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true
 
     function embed()
     {
-        let n = new MessageEmbed()
+        let n = new Discord.MessageEmbed()
         .setTitle("Teraz gram:")
         .setDescription(`${song.name}\n\`Wywołane przez:\` ${song.user}`)
         .setColor("#ff0000")
@@ -25,6 +25,8 @@ client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true
         if(song.formattedDuration > 0)
         {
             n.setFooter("Pozostało: " + new Date(left * 1000).toISOString().substr(11, 8));
+
+            return message.channel.send(n);
         }
     }
 
