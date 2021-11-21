@@ -31,8 +31,6 @@ client.distube
             return message.channel.send(n);
         }
     }
-
-    , embed()
         //`Teraz gram: \`${song.name}\` - \`${song.formattedDuration}\`\nWywołane przez: ${song.user}`
     ))
 
