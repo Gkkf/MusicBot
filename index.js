@@ -5,6 +5,15 @@ DisTube = require('distube');
 
 client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true });
 
+client.distube
+    .on("playSong", (message, queue, song) => message.channel.send( embed()     
+        //`Teraz gram: \`${song.name}\` - \`${song.formattedDuration}\`\nWywołane przez: ${song.user}`
+    ))
+
+	.on("addSong", (message, queue, song) => message.channel.send(
+        `Dodano: ${song.name} - \`${song.formattedDuration}\` do kolejki odtwarzania przez: ${song.user}`
+    ))
+
     function embed()
     {
         let n = new Discord.MessageEmbed()
@@ -29,15 +38,6 @@ client.distube = new DisTube(client, { searchSongs: false, emitNewSongOnly: true
             return message.channel.send(n);
         }
     }
-
-client.distube
-    .on("playSong", (message, queue, song) => message.channel.send( embed()     
-        //`Teraz gram: \`${song.name}\` - \`${song.formattedDuration}\`\nWywołane przez: ${song.user}`
-    ))
-
-	.on("addSong", (message, queue, song) => message.channel.send(
-        `Dodano: ${song.name} - \`${song.formattedDuration}\` do kolejki odtwarzania przez: ${song.user}`
-    ))
 
 const prefix = '!';
 
