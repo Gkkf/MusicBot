@@ -30,7 +30,7 @@ const prefix = '!';
 //
 //    client.commands.set(command.name, command);
 //}
-
+//
 //--------------------------------------------------//
 
 client.once('ready', () => 
