@@ -72,7 +72,7 @@ client.on('message', async message =>
     {
         if (!message.member.voice.channel) return message.channel.send('Musisz być na kanale głosowym, aby użyć tej komendy');
         client.distube.stop(message);
-        message.channel.send("No dobra, już idę");
+        message.channel.send("No dobra, już idę.");
     }
 
     if(command === 'skip' || command === 's')
